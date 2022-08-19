@@ -1,0 +1,16 @@
+.nav{
+    &_header{
+        margin: auto 0px;
+
+        &-item{
+            list-style: none;
+            display: inline;
+
+            &:nth-child(1),
+            &:nth-child(2){
+                margin-right: 20px;
+            }
+        }
+
+    }
+}
