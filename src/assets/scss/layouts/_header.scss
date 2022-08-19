@@ -1,9 +1,16 @@
-@use '../abstract/fonts' as f;
+@use '../abstract/variables' as f;
 
 .header{
-    display: flex;
-
+    width: 100%;
+    &-top{
+        text-align: right;
+    }
+    &-bottom{
+        display: flex;
+    }
     &_logo{
         font-size: 3.052rem;
+        width: 30%;
+        margin: 0px;
     }
 }

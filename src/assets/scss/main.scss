@@ -1,8 +1,7 @@
-@forward  "./abstract/index";
+@forward  "./abstract/absctract-dir";
 
 //components
-@forward "./components/list";
+@forward "./components/component-dir";
 
 //layout
-@forward "./layouts/header";
-@forward "./layouts/body";
+@forward "./layouts/layout-dir";

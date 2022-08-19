@@ -1,7 +1,13 @@
 .nav{
     &_header{
-        margin: auto 0px;
-
+        &-top{
+            margin-bottom: 0px;
+        }
+        &-bottom{
+            margin: auto 0px;
+            width: 70%;
+            text-align: right;
+        }
         &-item{
             list-style: none;
             display: inline;

@@ -1,7 +1,8 @@
-@use "../abstract/fonts" as f;
+@use "../abstract/variables" as abs;
 
 body{
-    font-size: f.$base-font-size;
+    font-size: abs.$font-basic;
     margin: 0px auto;
-    max-width: 75%;
+    max-width: 60%;
 }
+
