@@ -1,7 +1,13 @@
 @forward  "./abstract/absctract-dir";
 
+@forward "./base/base-dir";
+
 //components
 @forward "./components/component-dir";
 
 //layout
 @forward "./layouts/layout-dir";
+
+:root{
+    font-size: 18px;
+}

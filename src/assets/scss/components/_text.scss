@@ -1,15 +1,15 @@
 @use "../abstract/absctract-dir" as abs;
 
 .text{
-    &-basic{
+    &-xs{
         font-size: abs.$font-xs;
     }
 
-    &-xs{
-        font-size: abs.$font-xs;
+    &_product-price{
+        @include abs.font(abs.$font-primary, abs.$font-small, 700, abs.$color-text);
     }
 }
 
 h1, h2, h3, h4, h5 {
     line-height: 1.3;
-  }
+}

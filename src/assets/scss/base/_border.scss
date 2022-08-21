@@ -1,0 +1,7 @@
+@use "../abstract/absctract-dir" as abs ;
+
+.border{
+    &-round{
+        @include abs.margin(0px, 3px, 0px, 0px);
+    }
+}

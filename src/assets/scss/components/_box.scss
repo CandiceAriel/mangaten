@@ -1,0 +1,14 @@
+@use "../abstract/absctract-dir" as abs;
+
+.box{
+    //CATEGORIES NAV
+    &-red{
+        background-color: abs.$color-primary;
+    }
+
+    &-small{
+        @include abs.padding(10px,50px,10px,50px);
+        width: 20%;
+    }
+
+}

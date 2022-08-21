@@ -1,0 +1,6 @@
+@use "../abstract/absctract-dir" as abs ;
+
+body,
+p{
+    @include abs.font(abs.$font-primary, abs.$font-basic, 400, abs.$color-text);
+}

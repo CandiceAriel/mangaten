@@ -1,7 +1,6 @@
-@use "../abstract/variables" as abs;
+@use "../abstract/absctract-dir" as abs;
 
 body{
-    font-size: abs.$font-basic;
     margin: 0px auto;
     max-width: 60%;
 }
