@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
-import { books } from "../data/books";
+import { books } from "../data/data";
 
 function BooksShelf() {
-  const shelves = [
+  const [shelves,setShelves] = useState ([
     {
         shelvesId: "NR",
         label: "New Release",
@@ -14,10 +14,9 @@ function BooksShelf() {
         label: "Best Seller",
         prod: {books}
     }
-  ]
+  ]);
 
   console.log(shelves)
-
 
   return (
     <div>

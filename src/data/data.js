@@ -20,3 +20,26 @@ export const books= [
         price: 4.00
     }
 ];
+
+export const bookCategories = [
+    {
+      categoryId: "C01",
+      categoryName: "Manga"
+    },
+    {
+      categoryId: "C02",
+      categoryName: "Novel"
+    },
+    {
+      categoryId: "C03",
+      categoryName: "Artbook"
+    },
+    {
+      categoryId: "C04",
+      categoryName: "Study Guide"
+    },
+    {
+      categoryId: "C05",
+      categoryName: "Others"
+    }
+]
