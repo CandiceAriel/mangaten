@@ -1,0 +1,14 @@
+.list {
+  &_products {
+    padding: 0px;
+  }
+
+  &-inline {
+    list-style: none;
+    display: inline;
+  }
+
+  &-flex-view {
+    display: flex;
+  }
+}

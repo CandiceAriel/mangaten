@@ -1,6 +1,9 @@
+import TokyoRevengersCover from "../assets/images/TokyoRevengersCover.jpg";
+
 export const books= [
     {
         productId: "M001",
+        src: TokyoRevengersCover,
         title: "Tokyo Revengers",
         price: 4.00
     },
@@ -10,12 +13,12 @@ export const books= [
         price: 4.00
     },
     {
-        productId: "M002",
+        productId: "M003",
         title: "Your Name",
         price: 4.00
     },
     {
-        productId: "M002",
+        productId: "M004",
         title: "Your Name",
         price: 4.00
     }

@@ -1,0 +1,26 @@
+.c-bookshelf{
+  &_categories{
+      width: 100%;
+      &_list{
+        text-align: center;
+        padding: 32px 0px 0px 0px;
+        margin: 0px;
+
+        &_wrapper{
+            &:nth-child(1),
+            &:nth-child(2),
+            &:nth-child(3),
+            &:nth-child(4){
+              margin-right: 3px;
+            }
+        }
+        
+        &_item{
+            @include font(16px, 800, #FFFFFF);
+        }
+    }
+  }
+  &__shelf{
+      margin-bottom: 32px;
+  }
+}

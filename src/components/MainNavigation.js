@@ -1,42 +1,27 @@
 import React from 'react'
-import { NavLink, BrowserRouter } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import "../assets/scss/main.scss";
-import { bookCategories } from '../data/data';
-import PageRoutes from '../routes/PageRoutes';
+import {bookCategories} from '../data/data';
 
 function MainNavigation() {
 
   return (
-    <div className='navbar'>
-      <div className="nav-top">
-        <ul className= "list_nav-top text-xs">
-          <li className= "list_nav_item list-inline">My account</li>
-          <li className= "list_nav_item list-inline">Wishlist</li>
-          <li className= "list_nav_item list-inline">Cart</li>
-        </ul>
+    <div className='c-nav'>
+      <div className="c-nav__bottom">
+        <h1 className="c-nav__bottom-left nav_logo"><NavLink to="/" className="text_link-plain text-red">Mangaten</NavLink></h1>
+        <div className="c-nav__bottom-right nav_list-bottom">
+          <div className="c-nav__list_item list-inline">My account</div>
+          <div className="c-nav__list_item list-inline">Wishlist</div>
+          <div className="c-nav__list_item list-inline">Cart</div>
+        </div>
       </div>
-      <div className="nav-bottom">
-        <h1 className="nav-bottom-left nav_logo"><NavLink to="/home" className= "text_link-plain text-red">Mangaten</NavLink></h1>
-        <ul className= "nav-bottom-right list_nav-bottom ">
-          <li className= "list_nav_item list-inline">My account</li>
-          <li className= "list_nav_item list-inline">Wishlist</li>
-          <li className= "list_nav_item list-inline">Cart</li>
-        </ul>
-      </div>
-      <div className="categories">
-        <ul className= "list_categories">
-          {bookCategories.map ( bookCategory =>
-            <div key={bookCategory.categoryId} className= "box-red box-small margin-right">
-              <li key={bookCategory.categoryId} className= "list_categories_item list-inline">
-                <NavLink to={"/"+bookCategory.categoryName.toLowerCase()} className="link-nav-categories">{bookCategory.categoryName}</NavLink>
-              </li>
-            </div>
-          )}
-        </ul>
-      </div>
-      <div>
-        <PageRoutes />
+      <div className="c-nav__category">
+        {bookCategories.map(bookCategory =>
+          <div key={bookCategory.categoryId} className="c-nav__category-item-wrapper box-red">
+            <NavLink to={"/" + bookCategory.categoryName.toLowerCase()} className='c-nav__category-item'>{bookCategory.categoryName}</NavLink>
+          </div>
+        )}
       </div>
     </div>
   )

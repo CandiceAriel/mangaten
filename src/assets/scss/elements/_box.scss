@@ -1,0 +1,22 @@
+.box{
+    //CATEGORIES NAV
+    &-red{
+        background-color: $color-primary;
+    }
+
+    &-small{
+        width: 20%;
+    }
+
+    &_category{
+        border-radius: 5px;
+    }
+
+    &_product{
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3){
+            margin-right: auto;
+        }
+    }
+}

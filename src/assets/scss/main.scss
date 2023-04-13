@@ -1,13 +1,18 @@
-@forward  "./abstract/absctract-dir";
+//Abstract
+@import './abstract/colors';
+@import './abstract/mixins';
+@import './abstract/variables';
 
-@forward "./base/base-dir";
+//Base
+@import './base/base';
+@import './base/global';
+@import './base/typography';
 
-//components
-@forward "./components/component-dir";
+//element
+@import './elements/list';
+@import './elements/box';
+@import './elements/fonts';
 
-//layout
-@forward "./layouts/layout-dir";
-
-:root{
-    font-size: 18px;
-}
+//Component
+@import './components/nav';
+@import './components/bookshelf'

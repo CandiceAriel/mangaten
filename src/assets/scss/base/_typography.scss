@@ -1,17 +1,8 @@
-@use "../abstract/absctract-dir" as abs ;
-
 body,
 p{
-    @include abs.font(abs.$font-primary, abs.$font-basic, 400, abs.$color-text);
+    @include font(1rem, 400, #4D4D4D);
 }
 
 h1, h2, h3, h4, h5 {
     line-height: 1.3;
-}
-
-.link{
-    &-nav-categories{
-        text-decoration: none;
-        color: abs.$color-white;
-    }
 }
