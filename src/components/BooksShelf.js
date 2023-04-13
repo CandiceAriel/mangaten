@@ -12,13 +12,6 @@ function BooksShelf() {
           <h4 className="c-bookshelf__shelf-title">{category.categoryName}</h4>
           <div className="c-bookshelf__shelf">
             {category.items?.map((product) => (
-              // <div className='c-bookshelf__shelf-books box_product box-small' key={product.productId}>
-              //   <div className="list_nav_item list-inline">
-              //     <img src={product.src}></img>
-              //     <p>{product.title}</p>
-              //     <p className="text_product-price">${product.price}</p>
-              //   </div>
-              // </div>
               <NavLink
               to={`/${product.title}`}
               key={product.productId}
