@@ -19,7 +19,9 @@ function MainNavigation() {
       <div className="c-nav__category">
         {bookCategories.map(bookCategory =>
           <div key={bookCategory.categoryId} className="c-nav__category-item-wrapper box-red">
-            <NavLink to={"/" + bookCategory.categoryName.toLowerCase()} className='c-nav__category-item'>{bookCategory.categoryName}</NavLink>
+            <NavLink to={`/${bookCategory.categoryName.toLowerCase()}`} className='c-nav__category-item'>
+              {bookCategory.categoryName}
+            </NavLink>
           </div>
         )}
       </div>

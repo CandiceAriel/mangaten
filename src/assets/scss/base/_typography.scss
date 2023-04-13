@@ -1,6 +1,7 @@
 body,
 p{
-    @include font(1rem, 400, #4D4D4D);
+    font-family: 'Manrope', sans-serif;
+    @include font(16px, 300, #4D4D4D);
 }
 
 h1, h2, h3, h4, h5 {

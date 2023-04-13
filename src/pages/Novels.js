@@ -1,9 +1,10 @@
 import React from 'react'
+import MainNavigation from '../components/MainNavigation';
 
 function Novels() {
   return (
-    <div className='l-novels'>
-        <h1>Novels</h1>
+    <div className='c-novels'>
+      <MainNavigation />
     </div>
   )
 }

@@ -20,7 +20,10 @@
         }
     }
   }
-  &__shelf{
+  &__shelves{
       margin-bottom: 32px;
+  }
+  &__shelf{
+    display: flex;
   }
 }

@@ -4,7 +4,7 @@ import MainNavigation from '../components/MainNavigation';
 
 function Home() {
   return (
-    <div className= "home">
+    <div className= "c-home">
       <MainNavigation />
       <BooksShelf />     
     </div>

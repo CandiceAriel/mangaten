@@ -1,12 +1,12 @@
 //Import stylesheet
 import "./assets/scss/main.scss"
 
-import Home from "./pages/Home";
+import PageRoutes from "./routes/PageRoutes";
 
 function App() {
   return (
     <div className="App">
-      <Home />
+      <PageRoutes />
     </div>
   );
 }
