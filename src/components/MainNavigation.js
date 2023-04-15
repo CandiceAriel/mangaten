@@ -8,9 +8,9 @@ function MainNavigation() {
 
   return (
     <div className='c-nav'>
-      <div className="c-nav__bottom">
-        <h1 className="c-nav__bottom-left nav_logo"><NavLink to="/" className="text_link-plain text-red">Mangaten</NavLink></h1>
-        <div className="c-nav__bottom-right nav_list-bottom">
+      <div className="c-nav__header">
+        <h1 className="c-nav__header-left"><NavLink to="/" className="c-nav__logo">Mangaten</NavLink></h1>
+        <div className="c-nav__header-right nav_list-bottom">
           <div className="c-nav__list_item list-inline">My account</div>
           <div className="c-nav__list_item list-inline">Wishlist</div>
           <div className="c-nav__list_item list-inline">Cart</div>
@@ -18,7 +18,7 @@ function MainNavigation() {
       </div>
       <div className="c-nav__category">
         {bookCategories.map(bookCategory =>
-          <div key={bookCategory.categoryId} className="c-nav__category-item-wrapper box-red">
+          <div key={bookCategory.categoryId} className="c-nav__category-item-wrapper">
             <NavLink to={`/${bookCategory.categoryName.toLowerCase()}`} className='c-nav__category-item'>
               {bookCategory.categoryName}
             </NavLink>

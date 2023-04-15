@@ -13,14 +13,14 @@ function BooksShelf() {
           <div className="c-bookshelf__shelf">
             {category.items?.map((product) => (
               <NavLink
-              to={`/${product.title}`}
-              key={product.productId}
-              className='c-bookshelf__shelf-books box_product box-small'
-            >
-              <img src={product.src}></img>
-              <p>{product.title}</p>
-              <p className="text_product-price">${product.price}</p>
-            </NavLink>
+                to={`/${product.title}`}
+                key={product.productId}
+                className='c-bookshelf__shelf-book'
+              >
+                <img src={product.src}></img>
+                <p>{product.title}</p>
+                <p className="text_product-price">${product.price}</p>
+              </NavLink>
             ))}
           </div>
         </div>

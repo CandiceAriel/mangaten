@@ -37,14 +37,57 @@ export const bookCategories = [
       },
       {
         productId: "M002",
-        title: "Your Name",
+        src: TokyoRevengersCover,
+        title: "Tokyo Revengers",
+        price: 4.00
+      },
+      {
+        productId: "M003",
+        src: TokyoRevengersCover,
+        title: "Tokyo Revengers",
+        price: 4.00
+      },
+      {
+        productId: "M004",
+        src: TokyoRevengersCover,
+        title: "Tokyo Revengers",
+        price: 4.00
+      },
+      {
+        productId: "M005",
+        src: TokyoRevengersCover,
+        title: "Tokyo Revengers",
+        price: 4.00
+      },
+      {
+        productId: "M006",
+        src: TokyoRevengersCover,
+        title: "Tokyo Revengers",
+        price: 4.00
+      },
+      {
+        productId: "M006",
+        src: TokyoRevengersCover,
+        title: "Tokyo Revengers",
         price: 4.00
       },
     ],
   },
   {
     categoryId: "C02",
-    categoryName: "Novel"
+    categoryName: "Novel",
+    items: [
+      {
+        productId: "M002",
+        title: "Your Name",
+        price: 4.00
+      },
+      {
+        productId: "M002",
+        title: "Your Name",
+        price: 4.00
+      },
+    ],
   },
   {
     categoryId: "C03",
