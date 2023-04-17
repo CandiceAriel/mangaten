@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom';
 
 import "../assets/scss/main.scss";
-import {bookCategories} from '../data/data';
+import {bookCategories} from '../data/booksData';
 
 function MainNavigation() {
 
