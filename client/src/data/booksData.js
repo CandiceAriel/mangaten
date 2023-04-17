@@ -40,7 +40,7 @@ export const books = [
     productId: "M006",
     src: TokyoRevengersCover,
     title: "Demon Slayer",
-    categoryId: "C02",
+    categoryId: "C01",
     price: 4.00
   },
   {
@@ -54,6 +54,12 @@ export const books = [
     productId: "N008",
     src: TokyoRevengersCover,
     title: "My Love Mix-Up!",
+    categoryId: "C02",
+    price: 4.00
+  },
+  {
+    productId: "N001",
+    title: "Your Name",
     categoryId: "C02",
     price: 4.00
   },
