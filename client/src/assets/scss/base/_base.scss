@@ -15,3 +15,11 @@ a{
   text-decoration: none;
   color: #4D4D4D;
 }
+
+.c-base{
+  &__text{
+    &_bold{
+      font-weight: 700;
+    }
+  }
+}

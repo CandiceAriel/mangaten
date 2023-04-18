@@ -6,7 +6,6 @@
         text-align: center;
         padding: 32px 0px 0px 0px;
         margin: 0px;
-
         &_wrapper{
             &:nth-child(1),
             &:nth-child(2),
@@ -27,12 +26,18 @@
   &__shelf{
     display: flex;
     overflow: hidden;
+    width: 93%;
+    padding: 0px 40px;
     &-title{
       font-size: 32px;
     }
     &-book{
-      width: 20%;
-      margin-right: 62px;
+      width: 200px;
+      margin-right: 100px;
+      img{
+        height: 287px;
+        width: 200px;
+      }
       &:last-child{
         margin-right: 0px;
       }
