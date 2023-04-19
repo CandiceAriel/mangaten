@@ -5,7 +5,7 @@ export const books = [
   {
     productId: "M001",
     src: TokyoRevengersCover,
-    title: "Tokyo Revengers",
+    title: "Tokyo Revengers <29>",
     categoryId: "C01",
     price: 4.00
   },

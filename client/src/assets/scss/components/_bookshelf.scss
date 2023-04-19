@@ -47,6 +47,7 @@
 
 @media screen and (max-width: 1440px) {
   .c-bookshelf{
+    width: 80%;
     &_categories{
         width: 100%;
         &_list{
@@ -79,7 +80,7 @@
       }
       &-book{
         width: 20%;
-        margin-right: 65px;
+        margin-right: 72px;
         &:last-child{
           margin-right: 0px;
         }
