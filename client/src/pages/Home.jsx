@@ -3,7 +3,7 @@ import BooksShelf from '../components/BooksShelf';
 import MainNavigation from '../components/MainNavigation';
 import Promotion from '../components/Promotion';
 
-function Home() {
+const Home = () => {
   return (
     <div className= "c-home">
       <MainNavigation />

@@ -1,11 +1,23 @@
 import React, { useState,useEffect } from 'react';
+import axios from 'axios';
 import { NavLink } from "react-router-dom";
 
 import { books, bookCategories } from "../data/booksData";
 
 function BooksShelf() {
+  function fetchBoook() {
+    axios.get('http://localhost:3001/api/books')
+      .then((response) => {
+        const data = response.data;
+        console.log(data);
+      })
+      .catch(() => {
+        alert('Error retrieving data!!!');
+      });
+  };
 
   useEffect(() => {
+    fetchBoook();
   }, []);
 
 
