@@ -1,5 +1,4 @@
 import Books from "../mongodb/models/book.js";
-import Category from "../mongodb/models/category.js";
 
 import mongoose from "mongoose";
 import * as dotenv from "dotenv";
@@ -23,17 +22,20 @@ const getAllBooks = async (req, res) => {
   }
 };
 
-const getAllCategories = async (req, res) => {
-  try {
-    const categories = await Category.find({}).limit(req.query._end);
+const getBooksByID = async (req, res) => {
+  const { id } = req.params;
+    const bookExists = await Books.findOne({ _id: id }).populate(
+      "creator",
+    );
 
-    res.status(200).json(categories);
-  } catch (error) {
-    res.status(500).json({ message: error.message });
+  if (bookExists) {
+    res.status(200).json(bookExists);
+  } else {
+    res.status(404).json({ message: "Category not found" });
   }
 };
 
 export { 
   getAllBooks,
-  getAllCategories
+  getBooksByID
 };

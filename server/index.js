@@ -4,6 +4,7 @@ import cors from "cors";
 
 import connectDB from "./mongodb/connect.js";
 import bookRouter from "./routes/books.routes.js";
+import categoryRouter from "./routes/categories.router.js";
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/books", bookRouter);
+app.use("/api/categories", categoryRouter);
 
 const startServer = async () => {
   try {

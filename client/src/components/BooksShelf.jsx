@@ -2,14 +2,28 @@ import React, { useState,useEffect } from 'react';
 import axios from 'axios';
 import { NavLink } from "react-router-dom";
 
+import TokyoRevengersCover from "../assets/images/TokyoRevengersCover.jpg";
+import TheFirstSlamDunkCover from '../assets/images/TheTheFirstSlamDunkReSource.jpg'
 import { books, bookCategories } from "../data/booksData";
 
 function BooksShelf() {
+  const [result, setResult] = useState([]);
+
   function fetchBoook() {
     axios.get('http://localhost:3001/api/books')
+      .then(response => {
+        const data = response.data;
+        setResult(data);
+      })
+      .catch(() => {
+        alert('Error retrieving data!!!');
+      });
+  };
+
+  function fetchCategories() {
+    axios.get('http://localhost:3001/api/categories')
       .then((response) => {
         const data = response.data;
-        console.log(data);
       })
       .catch(() => {
         alert('Error retrieving data!!!');
@@ -17,9 +31,9 @@ function BooksShelf() {
   };
 
   useEffect(() => {
+    fetchCategories();
     fetchBoook();
-  }, []);
-
+  });
 
   return (
     <div className="c-bookshelf">
@@ -28,9 +42,9 @@ function BooksShelf() {
           <h4 className="c-bookshelf__shelf-title">{category.categoryName}</h4>
           <div className="c-bookshelf__shelf">
             { category.categoryName === "Manga" && 
-              books.filter(item => item.categoryId === "C01").map((item) => (
+              result.filter(item => item.categoryId === "C01").map((item, i) => (
                 <NavLink
-                  to={`/${item.title}`}
+                  to={`/books/${item._id}`}
                   key={item.productId}
                   className='c-bookshelf__shelf-book'
                 >
