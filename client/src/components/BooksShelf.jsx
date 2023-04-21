@@ -2,12 +2,12 @@ import React, { useState,useEffect } from 'react';
 import axios from 'axios';
 import { NavLink } from "react-router-dom";
 
-import TokyoRevengersCover from "../assets/images/TokyoRevengersCover.jpg";
-import TheFirstSlamDunkCover from '../assets/images/TheTheFirstSlamDunkReSource.jpg'
+
 import { books, bookCategories } from "../data/booksData";
 
 function BooksShelf() {
   const [result, setResult] = useState([]);
+  const [categories, setCategories] = useState([]);
 
   function fetchBoook() {
     axios.get('http://localhost:3001/api/books')
@@ -25,6 +25,7 @@ function BooksShelf() {
     axios.get('http://localhost:3001/api/categories')
       .then((response) => {
         const data = response.data;
+        setCategories(data)
       })
       .catch(() => {
         alert('Error retrieving data!!!');
@@ -52,7 +53,7 @@ function BooksShelf() {
 
   return (
     <div className="c-bookshelf">
-      {bookCategories.map(category =>
+      {categories.map(category =>
         <div key={category.shelvesId} className="c-bookshelf__shelves">
           <h4 className="c-bookshelf__shelf-title">{category.categoryName}</h4>
           <div className="c-bookshelf__shelf">
