@@ -14,6 +14,7 @@ function BooksShelf() {
       .then(response => {
         const data = response.data;
         setResult(data);
+        console.log(data)
       })
       .catch(() => {
         alert('Error retrieving data!!!');
@@ -30,10 +31,24 @@ function BooksShelf() {
       });
   };
 
+  function makeDecimal(num){
+
+    var leftDecimal = num.toString().replace('.', ''),
+        rightDecimal = '00';
+    
+    if(leftDecimal.length > 2){          
+      rightDecimal = leftDecimal.slice(-2);
+      leftDecimal = leftDecimal.slice(0, -2);
+    }
+    
+    var n = Number(leftDecimal+'.'+rightDecimal).toFixed(2);        
+    return (n === "NaN") ? num:n        
+  }
+
   useEffect(() => {
     fetchCategories();
     fetchBoook();
-  });
+  }, []);
 
   return (
     <div className="c-bookshelf">
@@ -50,7 +65,7 @@ function BooksShelf() {
                 >
                   <img src={item.src}></img>
                   <p className="c-base__text_bold">{item.title}</p>
-                  <p className="text_product-price">${item.price}</p>
+                  <p className="text_product-price">${makeDecimal(item.price)}</p>
                 </NavLink>  
               )) 
             } 
@@ -63,7 +78,7 @@ function BooksShelf() {
                 >
                   <img src={item.src}></img>
                   <p className="c-base__text_bold">{item.title}</p>
-                  <p className="text_product-price">${item.price}</p>
+                  <p className="text_product-price">${makeDecimal(item.price)}</p>
                 </NavLink>  
               )) 
             } 
