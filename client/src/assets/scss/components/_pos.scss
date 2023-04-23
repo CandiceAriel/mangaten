@@ -1,6 +1,16 @@
 .c-pos{
   &__wrapper{
-
+    display: flex;
+    padding: 30px;
+    &-items{
+      box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+      margin-right: 50px;
+      display: grid;
+      grid-template-columns: auto auto auto;
+      overflow: hidden;
+      overflow-y: auto;
+      justify-content: space-between;
+    }
   }
 }
 
@@ -9,16 +19,17 @@
     height: 94vh;
     &__wrapper{
       display: flex;
-      padding: 30px;
-      
+      padding: 0px 30px;
       &-items{
         width: 60%;
-        box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-        margin-right: 50px;
+        padding: 30px;
       }
       &-receipt{
         width: 40%;
       }
+    }
+    &__item{
+      width: 200px;
     }
   }
 }

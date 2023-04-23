@@ -2,7 +2,6 @@ import React, { useState,useEffect } from 'react';
 import axios from 'axios';
 import { NavLink } from "react-router-dom";
 
-
 import { books, bookCategories } from "../data/booksData";
 
 function BooksShelf() {
