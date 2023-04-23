@@ -4,8 +4,23 @@ import { NavLink } from 'react-router-dom';
 import "../assets/scss/main.scss";
 import {bookCategories} from '../data/booksData';
 
-function MainNavigation() {
+function MainNavigation(props) {
+  const isPOS = props.isPOS;
 
+  if(isPOS){
+    return (
+      <div className='c-nav'>
+        <div className="c-nav__header">
+          <h1 className="c-nav__header-left"><NavLink to="/" className="c-nav__logo">Mangaten</NavLink></h1>
+          <div className="c-nav__header-right nav_list-bottom">
+            <div className="c-nav__list_item list-inline">My account</div>
+            <div className="c-nav__list_item list-inline">Wishlist</div>
+            <div className="c-nav__list_item list-inline">Cart</div>
+          </div>
+        </div>
+      </div>
+    )
+  }
   return (
     <div className='c-nav'>
       <div className="c-nav__header">
@@ -27,6 +42,7 @@ function MainNavigation() {
       </div>
     </div>
   )
+  
 }
 
 export default MainNavigation

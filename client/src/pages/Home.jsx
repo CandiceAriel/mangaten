@@ -6,7 +6,7 @@ import Promotion from '../components/Promotion';
 const Home = () => {
   return (
     <div className= "c-home">
-      <MainNavigation />
+      <MainNavigation isPOS={false} />
       <div className= "c-home__content">
         <Promotion />
         <BooksShelf />     
