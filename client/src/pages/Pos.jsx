@@ -44,8 +44,8 @@ const Pos = () => {
               key={item.productId}
               className='c-pos__item'
             >
-              <img src={item.src}></img>
-              <p className="c-base__text_bold">{item.title}</p>
+              <img src={item.picture}></img>
+              <p className="c-base__text_bold">{item.title} ({item.vol})</p>
               <p className="text_product-price">${makeDecimal(item.price)}</p>
             </div>  
             )) 

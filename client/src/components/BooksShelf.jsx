@@ -60,8 +60,8 @@ function BooksShelf() {
                   key={item.productId}
                   className='c-bookshelf__shelf-book'
                 >
-                  <img src={item.src}></img>
-                  <p className="c-base__text_bold">{item.title}</p>
+                  <img src={item.picture}></img>
+                  <p className="c-base__text_bold">{item.title} <span>({item.vol})</span></p>
                   <p className="text_product-price">${makeDecimal(item.price)}</p>
                 </NavLink>  
               )) 
@@ -86,7 +86,7 @@ function BooksShelf() {
                   key={item.productId}
                   className='c-bookshelf__shelf-book'
                 >
-                  <img src={item.src}></img>
+                  <img src={item.picture}></img>
                   <p className="c-base__text_bold">{item.title}</p>
                   <p className="text_product-price">${makeDecimal(item.price)}</p>
                 </NavLink>  
