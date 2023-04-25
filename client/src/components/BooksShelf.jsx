@@ -5,23 +5,24 @@ import { NavLink } from "react-router-dom";
 import { books, bookCategories } from "../data/booksData";
 
 function BooksShelf() {
-  const [result, setResult] = useState([]);
+  const bookArr= [];
+  const [result, getResults] = useState([]);
   const [categories, setCategories] = useState([]);
 
   function fetchBoook() {
-    axios.get('http://localhost:3001/api/books')
+    axios.get('http://localhost:3001/books')
       .then(response => {
         const data = response.data;
-        setResult(data);
-        console.log(data)
+        getResults(data);
       })
       .catch(() => {
         alert('Error retrieving data!!!');
       });
+    return result;
   };
 
   function fetchCategories() {
-    axios.get('http://localhost:3001/api/categories')
+    axios.get('http://localhost:3001/categories')
       .then((response) => {
         const data = response.data;
         setCategories(data)
@@ -29,6 +30,7 @@ function BooksShelf() {
       .catch(() => {
         alert('Error retrieving data!!!');
       });
+    return categories;
   };
 
   // Format the price above to USD using the locale, style, and currency.
@@ -50,23 +52,23 @@ function BooksShelf() {
   return (
     <div className="c-bookshelf">
       {categories.map(category =>
-        <div key={category.shelvesId} className="c-bookshelf__shelves">
-          <h4 className="c-bookshelf__shelf-title">{category.categoryName}</h4>
+        <div key={category.category_id} className="c-bookshelf__shelves">
+          <h4 className="c-bookshelf__shelf-title">{category.category}</h4>
           <div className="c-bookshelf__shelf">
-            { category.categoryName === "Manga" && 
-              result.filter(item => item.categoryId === "C01").map((item, i) => (
+            { category.category === "Manga" && 
+               result.filter(item => item.category_id === 2).map((item, i) => (
                 <NavLink
-                  to={`/books/${item._id}`}
-                  key={item.productId}
+                  to={`/books/${item.book_id}`}
+                  key={item.book_id}
                   className='c-bookshelf__shelf-book'
                 >
-                  <img src={item.picture}></img>
-                  <p className="c-base__text_bold">{item.title} <span>({item.vol})</span></p>
+                  <img src={item.cover}></img>
+                  <p className="c-base__text_bold">{item.title} <span>{item.vol}</span></p>
                   <p className="text_product-price">${makeDecimal(item.price)}</p>
                 </NavLink>  
               )) 
             } 
-            { category.categoryName === "Novel" && 
+            { category.category === "Novel" && 
               books.filter(item => item.categoryId === "C02").map((item) => (
                 <NavLink
                   to={`/${item.title}`}
@@ -79,8 +81,8 @@ function BooksShelf() {
                 </NavLink>  
               )) 
             } 
-           { category.categoryName === "Artbook" && 
-              result.filter(item => item.categoryId === "C03").map((item) => (
+           { category.category === "Artbook" && 
+              books.filter(item => item.categoryId === "C03").map((item) => (
                 <NavLink
                   to={`/${item.title}`}
                   key={item.productId}

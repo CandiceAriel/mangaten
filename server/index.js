@@ -1,34 +1,46 @@
 import express from "express";
 import * as dotenv from "dotenv";
 import cors from "cors";
-
-import connectDB from "./mongodb/connect.js";
-import bookRouter from "./routes/books.routes.js";
-import categoryRouter from "./routes/categories.router.js";
+import mysql from "mysql";
 
 dotenv.config();
 
 const app = express();
-app.use(cors());
-app.use(express.json({ limit: "50mb" }));
+const  PORT = 3001;
 
-app.get("/", (req, res) => {
-  res.send({ message: "Hello World!" });
+app.use(cors());
+app.use(express.json());
+
+const db = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "",
+  database:"mangaten" 
 });
 
-app.use("/api/books", bookRouter);
-app.use("/api/categories", categoryRouter);
+app.listen(PORT, ()=>{
+  console.log(`Server is running on http://localhost/${PORT}/`);
+});
 
-const startServer = async () => {
-  try {
-    connectDB(process.env.MONGODB_URL);
+app.get("/", (req,res)=>{
+  res.send("Hello");
+});
 
-    app.listen(3001, () =>
-      console.log("Server started on port http://localhost:3001"),
-    );
-  } catch (error) {
-    console.log(error);
-  }
-};
+// Route to get all books
+app.get("/books", (req,res)=>{
+  db.query("SELECT * FROM books", (err,result)=>{
+    if(err) {
+      console.log(err)
+    } 
+    res.send(result)
+  });   
+});
 
-startServer();
+app.get("/categories", (req,res)=>{
+  db.query("SELECT * FROM categories", (err,result)=>{
+    if(err) {
+      console.log(err)
+    } 
+    res.send(result)
+  });   
+});
