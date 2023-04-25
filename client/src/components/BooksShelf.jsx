@@ -55,6 +55,19 @@ function BooksShelf() {
         <div key={category.category_id} className="c-bookshelf__shelves">
           <h4 className="c-bookshelf__shelf-title">{category.category}</h4>
           <div className="c-bookshelf__shelf">
+            { category.category === "Artbook" && 
+              books.filter(item => item.category_id === 1).map((item) => (
+                <NavLink
+                  to={`/${item.title}`}
+                  key={item.productId}
+                  className='c-bookshelf__shelf-book'
+                >
+                  <img src={item.picture}></img>
+                  <p className="c-base__text_bold">{item.title}</p>
+                  <p className="text_product-price">${makeDecimal(item.price)}</p>
+                </NavLink>  
+              )) 
+            } 
             { category.category === "Manga" && 
                result.filter(item => item.category_id === 2).map((item, i) => (
                 <NavLink
@@ -69,7 +82,7 @@ function BooksShelf() {
               )) 
             } 
             { category.category === "Novel" && 
-              books.filter(item => item.categoryId === "C02").map((item) => (
+              books.filter(item => item.category_id === 3).map((item) => (
                 <NavLink
                   to={`/${item.title}`}
                   key={item.productId}
@@ -81,19 +94,7 @@ function BooksShelf() {
                 </NavLink>  
               )) 
             } 
-           { category.category === "Artbook" && 
-              books.filter(item => item.categoryId === "C03").map((item) => (
-                <NavLink
-                  to={`/${item.title}`}
-                  key={item.productId}
-                  className='c-bookshelf__shelf-book'
-                >
-                  <img src={item.picture}></img>
-                  <p className="c-base__text_bold">{item.title}</p>
-                  <p className="text_product-price">${makeDecimal(item.price)}</p>
-                </NavLink>  
-              )) 
-            } 
+           
           </div>
         </div>
       )}
